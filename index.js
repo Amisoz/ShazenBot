@@ -4,7 +4,7 @@ var logChannel = '457612965470797825';
 var idBot = '457614601723576330';
 
 bot.on("ready", function(){
-    bot.user.setPresence({ game: { name: 'https://discord.gg/fE5uZXE', type: 0 } });
+    bot.user.setPresence({ game: { name: 'https://discord.gg/SHZGFBs', type: 0 } });
 })  
 
 bot.on("messageDelete", message => {

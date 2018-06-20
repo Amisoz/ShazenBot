@@ -9,10 +9,18 @@ bot.on("ready", function(){
     bot.user.setPresence({ game: { name: 'https://discord.gg/SHZGFBs', type: 0 } });
     console.log("Bot prêt");
 
+
     
-    bot.channels.get(idRoleChannel).send("Vous avez la possibilitée d'obtenir le rôle 'Fortnite' vous permettant de montrer que vous êtes un joueur.\nAfin de l'obtenir, réagissez à ce message en cliquant sur le "+ bot.emojis.get("458345217712455681") +". Si vous ne le voulez plus, retirez votre réaction.\nNote : Il n'ajoute aucunes permissions, prenez-le seulement si vous jouez.")
+    bot.channels.get(idRoleChannel).send("Vous avez la possibilité d'obtenir les rôles suivant les jeux que vous jouez.\nPour ceci, cliquez sur les logos correspondant.\nCela vous permet de parler dans les canaux liés à ce dernier.\nInutile de prendre tous les rôles dans l'unique but de pouvoir parler partout.")
             .then(function (message) {
               message.react("458345217712455681");
+              message.react("459127446063546379");
+              message.react("459127531442929667");
+              message.react("459127299988652053");
+              message.react("459125423985393675");
+              message.react("459124825898745870");
+              message.react("459127889216929796");
+              message.react("459128122831405066");
             }).catch(function() {
               console.log("Erreur lors de l'envoie du message.");
              });
@@ -42,7 +50,14 @@ bot.on('messageReactionAdd', (reaction, user) => {
     if (reaction.message.channel.id != idRoleChannel) return;
 
     const roles = {
-        "fortnite": "458350720421199873"
+        "fortnite": "458350720421199873",
+        "rust": "459119782852034561",
+        "leagueoflegend" : "459119815424999435",
+        "rocketleague": "459119705001558028",
+        "raimbowsix": "459119653760008214",
+        "ark": "459119588576329738",
+        "pubg": "459119409840259072",
+        "smite": "459119552484081665"
     };
   
     if (!roles[reaction.emoji.name]) return;
@@ -53,10 +68,16 @@ bot.on('messageReactionAdd', (reaction, user) => {
 
 bot.on('messageReactionRemove', (reaction, user) => {
     if (user.bot) return;
-    if (reaction.message.channel.id != idRoleChannel) return;
     
     const roles = {
-        "fortnite": "458350720421199873"
+        "fortnite": "458350720421199873",
+        "rust": "459119782852034561",
+        "leagueoflegend" : "459119815424999435",
+        "rocketleague": "459119705001558028",
+        "raimbowsix": "459119653760008214",
+        "ark": "459119588576329738",
+        "pubg": "459119409840259072",
+        "smite": "459119552484081665"
     };
   
     if (!roles[reaction.emoji.name]) return;

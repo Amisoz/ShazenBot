@@ -3,13 +3,13 @@ var bot = new Discord.Client();
 var logChannel = '457612965470797825';
 var idBot = '457614601723576330';
 var idNewRole = '457839811303178250';
-var idRoleChannel = '458343998403379200';
+var idRoleChannel = '459434388657274880';
 
 bot.on("ready", function(){
     bot.user.setPresence({ game: { name: 'https://discord.gg/SHZGFBs', type: 0 } });
     console.log("Bot prêt");
 
-
+    bot.channels.get(idRoleChannel).bulkDelete(1);
     
     bot.channels.get(idRoleChannel).send("Vous avez la possibilité d'obtenir les rôles suivant les jeux que vous jouez.\nPour ceci, cliquez sur les logos correspondant.\nCela vous permet de parler dans les canaux liés à ce dernier.\nInutile de prendre tous les rôles dans l'unique but de pouvoir parler partout.")
             .then(function (message) {
